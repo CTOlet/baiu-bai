@@ -1,0 +1,123 @@
+body {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    min-width: 1280px;
+    max-width: 100%;
+}
+
+    .block {
+
+    }
+
+        .block__inner {
+            box-sizing: border-box;
+            max-width: 1200px;
+            min-width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+    .block--header {
+        height: 702px;
+        background: url(../images/bed.jpg) center no-repeat;
+        background-size: cover;
+    }
+
+        .logo {
+            background: url(../images/baiu-bai-logo-fon.png) center no-repeat;
+            background-size: cover;
+            height: 314px;
+            width: 328px;
+            float: left;
+            margin-top: 30px;
+        }
+
+        .contacts {
+            float: right;
+            text-align: right;
+            margin-top: 15px;
+        }
+
+            .socials {
+                margin-top: 10px;
+            }
+
+                .socials__link {
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .socials__link--insta {
+                    background: url(../images/instagram.png) center no-repeat;
+                }
+
+                .socials__link--youtube {
+                    background: url(../images/youtube.png) center no-repeat;
+                }
+
+        .cloud {
+            float: right;
+            clear: both;
+            background: url(../images/cloud.png) center no-repeat;
+            background-size: cover;
+            width: 447px;
+            height: 447px;
+            position: relative;
+            top: -60px;
+            right: 100px;
+            padding: 70px 35px;
+            box-sizing: border-box;
+        }
+
+            .cloud .textA {
+                line-height: 1;
+                text-align: center;
+                font-size: 48px;
+            }
+
+            .cloud .textB {
+                line-height: 22.5px;
+                text-align: center;
+                color: #222222;
+                margin-top: 20px;
+            }
+
+    .block--about {
+
+    }
+
+        .block--about .textC {
+            color: rgb(0, 158, 225);
+            text-align: right;
+        }
+/* -------------------------------------------------------------------------------*/
+/*                             TEXT STYLES                                        */
+/* -------------------------------------------------------------------------------*/
+
+.textA {
+    color: rgb(255, 126, 186);
+    font-family: lobster, sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+}
+
+.textB {
+    color: rgb(0, 158, 225);
+    font-family: verdana, geneva, sans-serif;
+    font-size: 15px;
+    line-height: 22.5px;
+}
+
+.textC {
+    font-size: 46px;
+    line-height: 73.6px;
+    font-family: lobster, sans-serif;
+}
