@@ -7,6 +7,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'ru_KZ',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
@@ -50,6 +51,11 @@ $config = [
                 '' => 'site/index'
             ],
         ],
+        'formatter' => [
+            'numberFormatterOptions' => [
+                NumberFormatter::MAX_FRACTION_DIGITS => 0,
+            ]
+        ]
     ],
     'params' => $params,
 ];

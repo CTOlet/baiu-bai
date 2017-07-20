@@ -14,11 +14,12 @@ class LandingAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/fonts.css',
         'css/landing.css',
     ];
     public $js = [
     ];
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
+//        'yii\bootstrap\BootstrapAsset',
     ];
 }

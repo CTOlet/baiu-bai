@@ -22,10 +22,8 @@ LandingAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <div class="container">
-        <?= $content ?>
-    </div>
+<div class="container">
+    <?= $content ?>
 </div>
 
 <?php $this->endBody() ?>
