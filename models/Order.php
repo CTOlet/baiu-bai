@@ -2,6 +2,9 @@
 
 namespace app\models;
 
+use Yii;
+use yii\behaviors\TimestampBehavior;
+
 /**
  * This is the model class for table "{{%order}}".
  *
@@ -11,6 +14,9 @@ namespace app\models;
  * @property int $item
  * @property string $address
  * @property int $status
+ * @property int $price
+ * @property int $discount
+ * @property string $discount_comment
  * @property string $userAgent
  * @property string $userHost
  * @property string $userIp
@@ -20,6 +26,11 @@ namespace app\models;
  */
 class Order extends \yii\db\ActiveRecord
 {
+    const STATUS_NEW = 1;
+    const STATUS_ACCEPTED = 2;
+    const STATUS_DELIVERED = 3;
+    const STATUS_CANCELLED = 4;
+
     /**
      * @inheritdoc
      */
@@ -34,9 +45,9 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'phone', 'item', 'address', 'status', 'createdAt', 'updatedAt'], 'required'],
-            [['item', 'status'], 'integer'],
-            [['userAgent', 'userHost', 'userIp', 'comment'], 'string'],
+            [['name', 'phone', 'item', 'address', 'status', 'price'], 'required'],
+            [['item', 'status', 'price', 'discount'], 'integer'],
+            [['discount_comment', 'userAgent', 'userHost', 'userIp', 'comment'], 'string'],
             [['createdAt', 'updatedAt'], 'safe'],
             [['name', 'phone', 'address'], 'string', 'max' => 255],
         ];
@@ -54,12 +65,47 @@ class Order extends \yii\db\ActiveRecord
             'item' => 'Item',
             'address' => 'Address',
             'status' => 'Status',
+            'price' => 'Price',
+            'discount' => 'Discount',
+            'discount_comment' => 'Discount Comment',
             'userAgent' => 'User Agent',
             'userHost' => 'User Host',
             'userIp' => 'User Ip',
             'comment' => 'Comment',
             'createdAt' => 'Created At',
             'updatedAt' => 'Updated At',
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => TimestampBehavior::class,
+                'value' => gmdate('Y-m-d H:i:s'),
+                'createdAtAttribute' => 'createdAt',
+                'updatedAtAttribute' => 'updatedAt'
+            ]
+        ];
+    }
+
+    public function getItemName()
+    {
+        return Yii::$app->params['items'][$this->item]['name'];
+    }
+
+    public function getStatusName()
+    {
+        return self::statusNames()[$this->status];
+    }
+
+    public static function statusNames()
+    {
+        return [
+            self::STATUS_NEW => 'Новый',
+            self::STATUS_ACCEPTED => 'Принято',
+            self::STATUS_DELIVERED => 'Доставлено',
+            self::STATUS_CANCELLED => 'Отменено',
         ];
     }
 }

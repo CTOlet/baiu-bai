@@ -27,6 +27,12 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'status') ?>
 
+    <?php // echo $form->field($model, 'price') ?>
+
+    <?php // echo $form->field($model, 'discount') ?>
+
+    <?php // echo $form->field($model, 'discount_comment') ?>
+
     <?php // echo $form->field($model, 'userAgent') ?>
 
     <?php // echo $form->field($model, 'userHost') ?>

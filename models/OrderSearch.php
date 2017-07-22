@@ -16,8 +16,8 @@ class OrderSearch extends Order
     public function rules()
     {
         return [
-            [['id', 'item', 'status'], 'integer'],
-            [['name', 'phone', 'address', 'userAgent', 'userHost', 'userIp', 'comment', 'createdAt', 'updatedAt'], 'safe'],
+            [['id', 'item', 'status', 'price', 'discount'], 'integer'],
+            [['name', 'phone', 'address', 'discount_comment', 'userAgent', 'userHost', 'userIp', 'comment', 'createdAt', 'updatedAt'], 'safe'],
         ];
     }
 
@@ -45,6 +45,11 @@ class OrderSearch extends Order
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC
+                ]
+            ]
         ]);
 
         $this->load($params);
@@ -60,6 +65,8 @@ class OrderSearch extends Order
             'id' => $this->id,
             'item' => $this->item,
             'status' => $this->status,
+            'price' => $this->price,
+            'discount' => $this->discount,
             'createdAt' => $this->createdAt,
             'updatedAt' => $this->updatedAt,
         ]);
@@ -67,6 +74,7 @@ class OrderSearch extends Order
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'phone', $this->phone])
             ->andFilterWhere(['like', 'address', $this->address])
+            ->andFilterWhere(['like', 'discount_comment', $this->discount_comment])
             ->andFilterWhere(['like', 'userAgent', $this->userAgent])
             ->andFilterWhere(['like', 'userHost', $this->userHost])
             ->andFilterWhere(['like', 'userIp', $this->userIp])

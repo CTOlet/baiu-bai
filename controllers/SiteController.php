@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\ContactForm;
 use app\models\LoginForm;
+use app\models\Order;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -62,7 +63,27 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'landing';
-        return $this->render('web');
+        return $this->render('web', ['items' => Yii::$app->params['items']]);
+    }
+
+    public function actionOrder()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        $order = new Order();
+        $order->setAttributes(Yii::$app->request->post());
+        $order->status = Order::STATUS_NEW;
+        $order->price = Yii::$app->params['items'][$order->item]['price'];
+        $order->userAgent = Yii::$app->request->userAgent;
+        $order->userHost = Yii::$app->request->userHost;
+        $order->userIp = Yii::$app->request->userIP;
+
+        if ($order->save()) {
+            return true;
+        } else {
+            Yii::$app->response->statusCode = 500;
+            return false;
+        }
     }
 
     /**

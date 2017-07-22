@@ -8,6 +8,8 @@
 namespace app\assets;
 
 use yii\web\AssetBundle;
+use yii\web\JqueryAsset;
+use yii\widgets\MaskedInputAsset;
 
 class LandingAsset extends AssetBundle
 {
@@ -18,8 +20,11 @@ class LandingAsset extends AssetBundle
         'css/landing.css',
     ];
     public $js = [
+        'js/site.js'
     ];
     public $depends = [
+        JqueryAsset::class,
+        MaskedInputAsset::class
 //        'yii\bootstrap\BootstrapAsset',
     ];
 }

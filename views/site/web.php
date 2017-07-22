@@ -115,22 +115,23 @@ $this->title = 'Баю-бай'
         </div>
         <div class="block__right">
             <h2>Сделать заказ:</h2>
-            <form action="" method="">
-                <input type="text" placeholder="Ваше имя" class="br_input">
-                <input type="text" placeholder="Ваша фамилия" class="br_input">
-                <input type="text" placeholder="Ваш телефон*" class="br_input" required>
-                <select class="model_type" required>
+            <form id="order-form" action="<?= \yii\helpers\Url::to(['order']) ?>" method="post">
+                <input type="hidden" value="<?= Yii::$app->request->csrfToken ?>" name="_csrf">
+                <input type="text" placeholder="Ваше имя*" class="br_input" name="name" required>
+                <input type="text" placeholder="Ваш телефон*" class="br_input" name="phone" required
+                       pattern="^\+7\(7[0-9]{2}\)[0-9]{3}-[0-9]{2}-[0-9]{2}$" title="+7(7xx)xxx-xx-xx">
+                <select class="model_type" name="item" required>
                     <option value=""> Выберите модель</option>
-                    <option value="3"> «Тихоня
-                        Wi-Fi» <?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][3]) ?></option>
-                    <option value="2">
-                        «Соня» <?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][2]) ?></option>
-                    <option value="1">
-                        «Паинька» <?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][1]) ?></option>
-                    <option value="0">
-                        «Малютка» <?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][0]) ?></option>
+                    <option value="3"> «<?= $items[3]['name'] ?>
+                        » <?= Yii::$app->formatter->asCurrency($items[3]['price']) ?></option>
+                    <option value="2"> «<?= $items[2]['name'] ?>
+                        » <?= Yii::$app->formatter->asCurrency($items[2]['price']) ?></option>
+                    <option value="1"> «<?= $items[1]['name'] ?>
+                        » <?= Yii::$app->formatter->asCurrency($items[1]['price']) ?></option>
+                    <option value="0"> «<?= $items[0]['name'] ?>
+                        » <?= Yii::$app->formatter->asCurrency($items[0]['price']) ?></option>
                 </select>
-                <input type="text" placeholder="Адрес доставки" class="br_input" required>
+                <input type="text" placeholder="Адрес доставки" class="br_input" name="address" required>
                 <button type="submit" class="br_button">Купить</button>
             </form>
         </div>
@@ -175,16 +176,16 @@ $this->title = 'Баю-бай'
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Цена</div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][0]) ?>
+                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[0]['price']) ?>
                     <small>₸</small>
                 </div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][1]) ?>
+                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[1]['price']) ?>
                     <small>₸</small>
                 </div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][2]) ?>
+                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[2]['price']) ?>
                     <small>₸</small>
                 </div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][3]) ?>
+                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[3]['price']) ?>
                     <small>₸</small>
                 </div>
             </div>
@@ -298,8 +299,8 @@ $this->title = 'Баю-бай'
         <div class="models">
             <div class="model">
                 <div class="model__title">
-                    <div>«Тихоня Wi-Fi»</div>
-                    <div><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][3]) ?></div>
+                    <div><?= $items[3]['name'] ?></div>
+                    <div><?= Yii::$app->formatter->asCurrency($items[3]['price']) ?></div>
                 </div>
                 <div class="model__desc">
                     <img src="images/m1.jpg" width="200px" height="200px">
@@ -317,8 +318,8 @@ $this->title = 'Баю-бай'
             </div>
             <div class="model">
                 <div class="model__title">
-                    <div>«Соня»</div>
-                    <div><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][2]) ?></div>
+                    <div><?= $items[2]['name'] ?></div>
+                    <div><?= Yii::$app->formatter->asCurrency($items[2]['price']) ?></div>
                 </div>
                 <div class="model__desc">
                     <img src="images/m2.jpg" width="200px" height="200px">
@@ -333,8 +334,8 @@ $this->title = 'Баю-бай'
             </div>
             <div class="model">
                 <div class="model__title">
-                    <div>«Паинька»</div>
-                    <div><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][1]) ?></div>
+                    <div><?= $items[1]['name'] ?></div>
+                    <div><?= Yii::$app->formatter->asCurrency($items[1]['price']) ?></div>
                 </div>
                 <div class="model__desc">
                     <img src="images/m3.jpg" width="200px" height="200px">
@@ -347,8 +348,8 @@ $this->title = 'Баю-бай'
             </div>
             <div class="model">
                 <div class="model__title">
-                    <div>«Малютка»</div>
-                    <div><?= Yii::$app->formatter->asCurrency(Yii::$app->params['prices'][0]) ?></div>
+                    <div><?= $items[0]['name'] ?></div>
+                    <div><?= Yii::$app->formatter->asCurrency($items[0]['price']) ?></div>
                 </div>
                 <div class="model__desc">
                     <img src="images/m4.jpg" width="200px" height="200px">

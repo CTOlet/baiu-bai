@@ -54,7 +54,9 @@ $config = [
         'formatter' => [
             'numberFormatterOptions' => [
                 NumberFormatter::MAX_FRACTION_DIGITS => 0,
-            ]
+            ],
+            'datetimeFormat' => 'short',
+            'timeZone' => 'Asia/Almaty'
         ]
     ],
     'params' => $params,

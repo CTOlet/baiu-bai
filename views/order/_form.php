@@ -12,29 +12,36 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'item')->textInput() ?>
-
-    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'userAgent')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'userHost')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'userIp')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'createdAt')->textInput() ?>
-
-    <?= $form->field($model, 'updatedAt')->textInput() ?>
-
-    <div class="form-group">
+    <div class="col-md-6">
+        <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
+            'mask' => '+7(799)999-99-99'
+        ]) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'item')->dropDownList(\yii\helpers\ArrayHelper::map(Yii::$app->params['items'], 'id', 'name')) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'status')->dropDownList(\app\models\Order::statusNames()) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'price')->textInput() ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'discount')->textInput() ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'discount_comment')->textInput() ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'comment')->textInput() ?>
+    </div>
+    <div class="col-md-6">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
