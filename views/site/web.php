@@ -12,7 +12,7 @@ $this->title = 'Баю-бай'
     <div class="block__inner">
         <div class="logo"></div>
         <div class="contacts">
-            <div class="textA">+7 727 390 01 36</div>
+            <div class="textA"><?= Yii::$app->params['phone'] ?></div>
             <div class="textB">Официальный дилер в Казахстане</div>
             <div class="socials">
                 <a class="socials__link socials__link--insta" href="https://www.instagram.com/baiu_bai/"></a>
@@ -371,7 +371,7 @@ $this->title = 'Баю-бай'
                 frameborder="0" allowfullscreen="" wmode="transparent"></iframe>
     </div>
 </div>
-<div class="block block--delivery">
+<div class="block block--delivery" style="display: none;">
     <div class="block__inner">
         <h2 class="textC">Доставка</h2>
         <div class="delivery">
@@ -432,8 +432,8 @@ $this->title = 'Баю-бай'
             <img src="images/logo.png" width="182px" height="174px">
         </div>
         <div class="ftr_contacts">
-            <div class="textA">+7 727 390 01 36</div>
-            <div class="textB">г. Алматы</div>
+            <div class="textA"><?= Yii::$app->params['phone'] ?></div>
+            <div class="textB">г. Алматы, Республика Казахстан</div>
             <div class="socials">
                 <a class="socials__link socials__link--insta" href="https://www.instagram.com/baiu_bai/"></a>
                 <a class="socials__link socials__link--youtube" href="https://www.youtube.com/c/УстройствоБаюБай"></a>
@@ -441,8 +441,8 @@ $this->title = 'Баю-бай'
         </div>
         <div class="ftr_copyright">
             <a href="#order" class="link">Сделать заказ</a>
-            <p>© 2012-2017 Устройства для качания детской кроватки «Баю-Бай»</p>
-            <p>© 2017 Интернет-магазин baiu-bai.kz</p>
+            <p>© 2012-<?= date('Y') ?> Устройства для качания детской кроватки «Баю-Бай»</p>
+            <p>© <?= date('Y') ?> Интернет-магазин baiu-bai.kz</p>
         </div>
     </div>
 </div>
