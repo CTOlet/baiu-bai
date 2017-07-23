@@ -15,8 +15,10 @@ $this->title = 'Баю-бай'
             <div class="textA"><?= Yii::$app->params['phone'] ?></div>
             <div class="textB">Официальный дилер в Казахстане</div>
             <div class="socials">
-                <a class="socials__link socials__link--insta" href="https://www.instagram.com/baiu_bai/"></a>
-                <a class="socials__link socials__link--youtube" href="https://www.youtube.com/c/УстройствоБаюБай"></a>
+                <a class="socials__link socials__link--insta" href="https://www.instagram.com/baiu_bai.kz/"
+                   target="_blank"></a>
+                <a class="socials__link socials__link--youtube" href="https://www.youtube.com/УстройствоБаюБай"
+                   target="_blank"></a>
             </div>
         </div>
         <div class="cloud">
@@ -121,17 +123,17 @@ $this->title = 'Баю-бай'
                 <input type="text" placeholder="Ваш телефон*" class="br_input" name="phone" required
                        pattern="^\+7\(7[0-9]{2}\)[0-9]{3}-[0-9]{2}-[0-9]{2}$" title="+7(7xx)xxx-xx-xx">
                 <select class="model_type" name="item" required>
-                    <option value=""> Выберите модель</option>
-                    <option value="3"> «<?= $items[3]['name'] ?>
+                    <option value="">Выберите модель*</option>
+                    <option value="3">«<?= $items[3]['name'] ?>
                         » <?= Yii::$app->formatter->asCurrency($items[3]['price']) ?></option>
-                    <option value="2"> «<?= $items[2]['name'] ?>
+                    <option value="2">«<?= $items[2]['name'] ?>
                         » <?= Yii::$app->formatter->asCurrency($items[2]['price']) ?></option>
-                    <option value="1"> «<?= $items[1]['name'] ?>
+                    <option value="1">«<?= $items[1]['name'] ?>
                         » <?= Yii::$app->formatter->asCurrency($items[1]['price']) ?></option>
-                    <option value="0"> «<?= $items[0]['name'] ?>
+                    <option value="0">«<?= $items[0]['name'] ?>
                         » <?= Yii::$app->formatter->asCurrency($items[0]['price']) ?></option>
                 </select>
-                <input type="text" placeholder="Адрес доставки" class="br_input" name="address" required>
+                <input type="text" placeholder="Адрес доставки*" class="br_input" name="address" required>
                 <button type="submit" class="br_button">Купить</button>
             </form>
         </div>
@@ -176,17 +178,17 @@ $this->title = 'Баю-бай'
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Цена</div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[0]['price']) ?>
-                    <small>₸</small>
+                <div class="c_table__col">
+                    <small><?= Yii::$app->formatter->asCurrency($items[0]['price']) ?></small>
                 </div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[1]['price']) ?>
-                    <small>₸</small>
+                <div class="c_table__col">
+                    <small><?= Yii::$app->formatter->asCurrency($items[1]['price']) ?></small>
                 </div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[2]['price']) ?>
-                    <small>₸</small>
+                <div class="c_table__col">
+                    <small><?= Yii::$app->formatter->asCurrency($items[2]['price']) ?></small>
                 </div>
-                <div class="c_table__col"><?= Yii::$app->formatter->asCurrency($items[3]['price']) ?>
-                    <small>₸</small>
+                <div class="c_table__col">
+                    <small><?= Yii::$app->formatter->asCurrency($items[3]['price']) ?></small>
                 </div>
             </div>
             <div class="c_table__row">
@@ -435,8 +437,10 @@ $this->title = 'Баю-бай'
             <div class="textA"><?= Yii::$app->params['phone'] ?></div>
             <div class="textB">г. Алматы, Республика Казахстан</div>
             <div class="socials">
-                <a class="socials__link socials__link--insta" href="https://www.instagram.com/baiu_bai/"></a>
-                <a class="socials__link socials__link--youtube" href="https://www.youtube.com/c/УстройствоБаюБай"></a>
+                <a class="socials__link socials__link--insta" href="https://www.instagram.com/baiu_bai.kz/"
+                   target="_blank"></a>
+                <a class="socials__link socials__link--youtube" href="https://www.youtube.com/УстройствоБаюБай"
+                   target="_blank"></a>
             </div>
         </div>
         <div class="ftr_copyright">
