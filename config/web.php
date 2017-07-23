@@ -57,6 +57,21 @@ $config = [
             ],
             'datetimeFormat' => 'short',
             'timeZone' => 'Asia/Almaty'
+        ],
+        'view' => [
+            'as yandexMetrika' => [
+                'class' => \hiqdev\yii2\YandexMetrika\Behavior::class,
+                'builder' => [
+                    'class' => \hiqdev\yii2\YandexMetrika\CodeBuilder::class,
+                    'id' => 45396030,
+                    'params' => [
+                        'clickmap' => true,
+                        'trackLinks' => true,
+                        'accurateTrackBounce' => true,
+                        'webvisor' => true
+                    ]
+                ]
+            ]
         ]
     ],
     'params' => $params,

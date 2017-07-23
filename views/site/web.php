@@ -64,7 +64,7 @@ $this->title = 'Баю-бай'
     <div class="block__inner">
         <h2 class="textC">Хотите узнать больше?</h2>
         <img src="images/laptop.png" width="844px" height="428px">
-        <iframe width="550" height="335" src="//www.youtube.com/embed/5GTmYtVR0Fk?rel=0&amp;controls=0&amp;showinfo=0"
+        <iframe width="550" height="335" src="//www.youtube.com/embed/5GTmYtVR0Fk?rel=0&amp;showinfo=0"
                 frameborder="0" allowfullscreen="" wmode="transparent"></iframe>
     </div>
 </div>
@@ -367,7 +367,7 @@ $this->title = 'Баю-бай'
     <div class="block__inner">
         <h2 class="textC">Подойдет ли Ваша кроватка?</h2>
         <img src="images/imac.png" width="452px" height="363px">
-        <iframe width="416" height="235" src="//www.youtube.com/embed/5GTmYtVR0Fk?rel=0&amp;controls=0&amp;showinfo=0"
+        <iframe width="416" height="235" src="//www.youtube.com/embed/kED_FJWKDOA?rel=0&amp;showinfo=0"
                 frameborder="0" allowfullscreen="" wmode="transparent"></iframe>
     </div>
 </div>
@@ -429,7 +429,7 @@ $this->title = 'Баю-бай'
 <div class="block block--footer">
     <div class="block__inner">
         <div class="ftr_logo">
-            <img src="images/ftr_logo.png" width="182px" height="174px">
+            <img src="images/logo.png" width="182px" height="174px">
         </div>
         <div class="ftr_contacts">
             <div class="textA">+7 727 390 01 36</div>
