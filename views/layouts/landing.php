@@ -22,6 +22,13 @@ LandingAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+<div id='preloader' style="display: none;">
+    <div id="background"></div>
+    <div id='status'>
+        <img alt='' height='64' src='images/preloader.gif' width='64'/>
+    </div>
+</div>
+
 <div class="container">
     <?= $content ?>
 </div>

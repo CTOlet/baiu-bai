@@ -18,6 +18,7 @@ class LandingAsset extends AssetBundle
     public $css = [
         'css/fonts.css',
         'css/landing.css',
+        'css/loader.css',
     ];
     public $js = [
         'js/site.js'

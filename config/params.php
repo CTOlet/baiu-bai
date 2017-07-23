@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
+    'adminEmail' => 'alimzhan.abu@yandex.kz',
     'items' => [
         0 => [
             'id' => 0,

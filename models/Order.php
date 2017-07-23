@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\widgets\DetailView;
 
 /**
  * This is the model class for table "{{%order}}".
@@ -107,5 +108,29 @@ class Order extends \yii\db\ActiveRecord
             self::STATUS_DELIVERED => 'Доставлено',
             self::STATUS_CANCELLED => 'Отменено',
         ];
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+
+        if ($insert) {
+            Yii::$app->mailer->compose()
+                ->setTo(Yii::$app->params['adminEmail'])
+                ->setFrom(['info@baiu-bai.kz'])
+                ->setSubject("Заказ №{$this->id}")
+                ->setHtmlBody(DetailView::widget([
+                    'model' => $this,
+                    'attributes' => [
+                        'name',
+                        'phone',
+                        'itemName',
+                        'address',
+                        'price',
+                        'createdAt:dateTime',
+                    ]
+                ]))
+                ->send();
+        }
     }
 }
