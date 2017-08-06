@@ -373,36 +373,36 @@ $this->title = 'Баю-бай'
                 frameborder="0" allowfullscreen="" wmode="transparent"></iframe>
     </div>
 </div>
-<div class="block block--delivery" style="display: none;">
-    <div class="block__inner">
-        <h2 class="textC">Доставка</h2>
-        <div class="delivery">
-            <div class="dlr__type">
-                <div class="dlr__type_desc dlr__type_desc--self">
-                    <div>Самовывоз</div>
-                    <div>Забрать свой заказ Вы можете у нас в шоу-руме</div>
-                </div>
-                <div class="dlr__type_title">Москва и МО</div>
-                <div class="dlr__type_desc dlr__type_desc--door">
-                    <div>Курьер</div>
-                    <div>Доставка заказа до Вашей двери</div>
-                </div>
-            </div>
-            <div class="dlr__type">
-                <div class="dlr__type_desc dlr__type_desc--point">
-                    <div>Пункт выдачи</div>
-                    <div>Доставка до терминала выдачи в Вашем городе</div>
-                </div>
-                <div class="dlr__type_title">Россия и СНГ</div>
-                <div class="dlr__type_desc dlr__type_desc--company">
-                    <div>Транспортная компания</div>
-                    <div>Доставка транспортной компанией</div>
-                </div>
-            </div>
-            <div></div>
-        </div>
-    </div>
-</div>
+<!--<div class="block block--delivery">-->
+<!--    <div class="block__inner">-->
+<!--        <h2 class="textC">Доставка</h2>-->
+<!--        <div class="delivery">-->
+<!--            <div class="dlr__type">-->
+<!--                <div class="dlr__type_desc dlr__type_desc--self">-->
+<!--                    <div>Самовывоз</div>-->
+<!--                    <div>Забрать свой заказ Вы можете у нас в шоу-руме</div>-->
+<!--                </div>-->
+<!--                <div class="dlr__type_title">Москва и МО</div>-->
+<!--                <div class="dlr__type_desc dlr__type_desc--door">-->
+<!--                    <div>Курьер</div>-->
+<!--                    <div>Доставка заказа до Вашей двери</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="dlr__type">-->
+<!--                <div class="dlr__type_desc dlr__type_desc--point">-->
+<!--                    <div>Пункт выдачи</div>-->
+<!--                    <div>Доставка до терминала выдачи в Вашем городе</div>-->
+<!--                </div>-->
+<!--                <div class="dlr__type_title">Россия и СНГ</div>-->
+<!--                <div class="dlr__type_desc dlr__type_desc--company">-->
+<!--                    <div>Транспортная компания</div>-->
+<!--                    <div>Доставка транспортной компанией</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <div class="block block--faq">
     <div class="block__inner">
         <h2 class="textC"><span>Вопросы</span> и <span>ответы</span></h2>

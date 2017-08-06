@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\LoginForm;
 use app\models\Order;
+use Detection\MobileDetect;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -62,7 +63,9 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'landing';
-        return $this->render('web', ['items' => Yii::$app->params['items']]);
+        $detect = new MobileDetect();
+        $view = $detect->isMobile() && !$detect->isTablet() ? 'mobile' : 'web';
+        return $this->render($view, ['items' => Yii::$app->params['items']]);
     }
 
     public function actionOrder()

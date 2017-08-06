@@ -22,4 +22,14 @@
     });
 
     $('input[name="phone"]').inputmask('+7(799)999-99-99');
+
+    new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        loop: true,
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        allowSwipeToNext: true,
+        paginationClickable: true,
+        spaceBetween: 10
+    })
 })();

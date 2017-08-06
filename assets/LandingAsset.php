@@ -7,6 +7,7 @@
 
 namespace app\assets;
 
+use Detection\MobileDetect;
 use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
 use yii\widgets\MaskedInputAsset;
@@ -17,7 +18,6 @@ class LandingAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/fonts.css',
-        'css/landing.css',
         'css/loader.css',
     ];
     public $js = [
@@ -28,4 +28,16 @@ class LandingAsset extends AssetBundle
         MaskedInputAsset::class
 //        'yii\bootstrap\BootstrapAsset',
     ];
+
+    public function init()
+    {
+        $detect = new MobileDetect();
+        if ($detect->isMobile() && !$detect->isTablet()) {
+            array_push($this->css, 'css/mobile.css', 'css/swiper.css');
+            array_unshift($this->js, 'js/swiper.js');
+        } else {
+            array_push($this->css, 'css/landing.css');
+        }
+        parent::init();
+    }
 }
