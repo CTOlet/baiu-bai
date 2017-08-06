@@ -124,6 +124,7 @@ class Order extends \yii\db\ActiveRecord
                     'attributes' => [
                         'name',
                         'phone',
+                        'item',
                         'itemName',
                         'address',
                         'price',
