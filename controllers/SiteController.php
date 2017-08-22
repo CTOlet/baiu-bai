@@ -64,8 +64,12 @@ class SiteController extends Controller
     {
         $this->layout = 'landing';
         $detect = new MobileDetect();
-        $view = $detect->isMobile() && !$detect->isTablet() ? 'mobile' : 'web';
-        return $this->render($view, ['items' => Yii::$app->params['items']]);
+        $zone = YII_ENV_PROD ? 'kz' : 'local';
+        $mobile = $detect->isMobile() && !$detect->isTablet();
+        if (Yii::$app->request->hostName == "baiu-bai.$zone" && $mobile) {
+            return $this->redirect("http://m.baiu-bai.$zone");
+        }
+        return $this->render($mobile ? 'mobile' : 'web', ['items' => Yii::$app->params['items']]);
     }
 
     public function actionOrder()
