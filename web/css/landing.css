@@ -297,13 +297,16 @@ body {
                 color: rgb(0, 158, 225);
                 font-family: lobster, sans-serif;
                 font-weight: normal;
-                text-align: center;
+                text-align: right;
+                margin-right: 50px;
             }
 
             .block__left p {
-                color: rgb(0, 158, 225);
-                text-align: center;
-                font-size: 48px;
+                color: #ff7ebb;
+                text-align: right;
+                font-size: 28px;
+                font-family: lobster, sans-serif;
+                margin-right: 50px;
             }
 
         .block--order .block__right {
@@ -342,7 +345,7 @@ body {
                 background-color: #ff7ebb;
                 height: 50px;
                 width: 75%;
-                margin: 10px auto 40px;
+                margin: 10px auto;
                 color: #fff;
                 font-size: 26px;
                 display: block;
@@ -355,6 +358,13 @@ body {
                 .br_button:hover {
                     background-color: #ff007b;
                 }
+
+.phone {
+    font-family: lobster, sans-serif;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
 
     .block--freetime {
         background-color: #ff7ebb;
@@ -494,7 +504,8 @@ body {
                 .c_table__col {
                     float: left;
                     min-height: 100%;
-                    width: 15%;
+                    /*width: 15%;*/
+                    width: 12%;
                     text-align: center;
                     line-height: 40px;
                     font-size: 28px;
@@ -534,18 +545,21 @@ body {
             }
 
             .c_table__row:nth-child(12),
-            .c_table__row:nth-child(14) {
+            .c_table__row:nth-child(14),
+            .c_table__row:last-child {
                 height: 58px;
             }
 
                 .c_table__row:nth-child(12) .c_table__col:not(:first-child),
-                .c_table__row:nth-child(14) .c_table__col:not(:first-child) {
+                .c_table__row:nth-child(14) .c_table__col:not(:first-child),
+                .c_table__row:last-child .c_table__col:not(:first-child) {
                     line-height: 58px;
                 }
 
                 .c_table__row:first-child .c_table__col {
                     color: rgb(0, 158, 225);
-                    font-size: 20px;
+                    /*font-size: 20px;*/
+                    font-size: 17px;
                     font-family: lobster, sans-serif;
                     border: none;
                 }
@@ -563,7 +577,16 @@ body {
                 text-decoration: none;
                 line-height: 50px;
                 text-align: center;
+                margin-bottom: 20px;
             }
+
+.block--compare p {
+    text-align: center;
+    font-family: lobster, sans-serif;
+    font-size: 16px;
+    color: #808080;
+    margin-bottom: 40px;
+}
 
     .block--guarantee {
         padding: 30px 0;
@@ -628,7 +651,12 @@ body {
                 box-sizing: border-box;
             }
 
-            .model:nth-child(2n) {
+/*.model:nth-child(2n) {*/
+/*background-color: #ff7ebb;*/
+/*}*/
+
+.model:nth-child(2),
+.model:nth-child(3) {
                 background-color: #ff7ebb;
             }
 
@@ -660,7 +688,12 @@ body {
                         line-height: 30px;
                     }
 
-                    .model:nth-child(2n) .model__title div:last-child {
+/*.model:nth-child(2n) .model__title div:last-child {*/
+/*background-color: #009ee1;*/
+/*}*/
+
+.model:nth-child(2) .model__title div:last-child,
+.model:nth-child(3) .model__title div:last-child {
                         background-color: #009ee1;
                     }
 
@@ -703,9 +736,39 @@ body {
                         background-color: #ff7ebb;
                     }
 
-                    .model:nth-child(2n) .model__btn:hover {
+/*.model:nth-child(2n) .model__btn:hover {*/
+/*background-color: #009ee1;*/
+/*}*/
+
+.model:nth-child(2) .model__btn:hover,
+.model:nth-child(3) .model__btn:hover {
                         background-color: #009ee1;
                     }
+
+.model--new {
+    float: none;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.model--new::before {
+    content: 'New!';
+    color: #fff;
+    background: #ff7ebb;
+    width: 220px;
+    height: 200px;
+    display: block;
+    position: absolute;
+    left: -220px;
+    top: 25%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    font-family: lobster, sans-serif;
+    font-size: 90px;
+    padding: 40px 0 0 20px;
+    box-sizing: border-box;
+}
 
     .block--video {
          background: rgb(0, 158, 225);
@@ -1012,4 +1075,9 @@ body {
     font-size: 20px;
     text-align: center;
     color: rgb(0, 158, 225);
+}
+
+.textE {
+    font-size: 100px;
+    line-height: 1;
 }

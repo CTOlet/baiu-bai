@@ -112,8 +112,9 @@ $this->title = 'Баю-бай'
 <div class="block block--order" id="order">
     <div class="block__inner">
         <div class="block__left">
-            <h2>Тихоня Wi-Fi с датчиком движения!</h2>
-            <p>Уже в продаже!</p>
+            <!--            <h2>Тихоня Wi-Fi с датчиком движения!</h2>-->
+            <h2>Новинка! <br> <span>Совушка</span></h2>
+            <p>Наша новая и самая <br> продвинутая модель!</p>
         </div>
         <div class="block__right">
             <h2>Сделать заказ:</h2>
@@ -135,6 +136,10 @@ $this->title = 'Баю-бай'
                 </select>
                 <input type="text" placeholder="Адрес доставки*" class="br_input" name="address" required>
                 <button type="submit" class="br_button">Купить</button>
+                <div class="phone">
+                    Или просто позвоните нам: <br>
+                    <span><?= Yii::$app->params['phone'] ?></span>
+                </div>
             </form>
         </div>
     </div>
@@ -175,6 +180,7 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">«Паинька»</div>
                 <div class="c_table__col">«Соня»</div>
                 <div class="c_table__col">«Тихоня Wi-Fi»</div>
+                <div class="c_table__col">«Совушка»</div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Цена</div>
@@ -190,9 +196,13 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">
                     <small><?= Yii::$app->formatter->asCurrency($items[3]['price']) ?></small>
                 </div>
+                <div class="c_table__col">
+                    <small></small>
+                </div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Бесшумная работа</div>
+                <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
@@ -204,6 +214,7 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
+                <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Не увеличивает габариты кроватки</div>
@@ -211,17 +222,20 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
+                <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
-                <div class="c_table__col">Гарантия 1 год</div>
-                <div class="c_table__col">✔</div>
-                <div class="c_table__col">✔</div>
-                <div class="c_table__col">✔</div>
-                <div class="c_table__col">✔</div>
+                <div class="c_table__col">Гарантия (месяцев)</div>
+                <div class="c_table__col">12</div>
+                <div class="c_table__col">12</div>
+                <div class="c_table__col">12</div>
+                <div class="c_table__col">12</div>
+                <div class="c_table__col">24</div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Количество "скоростей" качания</div>
                 <div class="c_table__col">1</div>
+                <div class="c_table__col">6</div>
                 <div class="c_table__col">6</div>
                 <div class="c_table__col">6</div>
                 <div class="c_table__col">6</div>
@@ -232,6 +246,7 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
+                <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Датчик плача</div>
@@ -239,12 +254,14 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
+                <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Датчик движения</div>
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">-</div>
-                <div class="c_table__col">-</div>
+                <div class="c_table__col">✔</div>
+                <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
@@ -253,12 +270,14 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">✔</div>
                 <div class="c_table__col">-</div>
+                <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Дистанционное управление с обратной связью</div>
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">✔</div>
+                <div class="c_table__col">-</div>
                 <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
@@ -267,6 +286,7 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">✔</div>
+                <div class="c_table__col">✔</div>
             </div>
             <div class="c_table__row">
                 <div class="c_table__col">Поддержка Windows, Linux, Mac OS, iOS, Android, Windows Mobile и т.д.</div>
@@ -274,9 +294,19 @@ $this->title = 'Баю-бай'
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">-</div>
                 <div class="c_table__col">✔</div>
+                <div class="c_table__col">✔</div>
+            </div>
+            <div class="c_table__row">
+                <div class="c_table__col">Мощность устройства(max % от свободного хода кроватки)</div>
+                <div class="c_table__col">40</div>
+                <div class="c_table__col">60</div>
+                <div class="c_table__col">60</div>
+                <div class="c_table__col">60</div>
+                <div class="c_table__col">75</div>
             </div>
         </div>
-        <a href="#order" class="br_button">Заказать</a>
+        <a href="/" class="br_button">Заказать устройство</a>
+        <p>Для оптимальной работы устройства, Ваша кроватка должна делать минимум 30 колебаний</p>
     </div>
 </div>
 <div class="block block--guarantee">
@@ -299,6 +329,26 @@ $this->title = 'Баю-бай'
     <div class="block__inner">
         <h2 class="textC">Модели</h2>
         <div class="models">
+            <div class="model model--new">
+                <div class="model__title">
+                    <div>«Совушка»</div>
+                    <div>9 490 руб.</div>
+                </div>
+                <div class="model__desc">
+                    <img src="images/m_new.jpg" width="200px" height="200px">
+                    <ul>
+                        <li>6 режимов качания</li>
+                        <li>Датчик движения</li>
+                        <li>Датчик плача (5 режимов)</li>
+                        <li>Таймер работы (до 24 часов)</li>
+                        <li>Пульт управления с подсветкой и обратной связью</li>
+                        <li>Встроенный web-сервер</li>
+                        <li>Режим «Станции» и «Точки доступа»</li>
+                        <li>Гарантия 2 года</li>
+                    </ul>
+                </div>
+                <a href="/" class="model__btn">Купить</a>
+            </div>
             <div class="model">
                 <div class="model__title">
                     <div><?= $items[3]['name'] ?></div>
@@ -445,6 +495,7 @@ $this->title = 'Баю-бай'
         </div>
         <div class="ftr_copyright">
             <a href="#order" class="link">Сделать заказ</a>
+            <p>Здесь инфо о филиале в России</p>
             <p>© 2012-<?= date('Y') ?> Устройства для качания детской кроватки «Баю-Бай»</p>
             <p>© <?= date('Y') ?> Интернет-магазин baiu-bai.kz</p>
         </div>

@@ -248,7 +248,7 @@ html, body {
                 width: 64vw;
                 height: 204.8px;
                 height: 64vw;
-                border-radius: 50%;
+                border-radius: 3%;
                 background: rgba(243, 250, 250, 0.52);
                 margin-top: 21px;
                 margin-top: 7vw;
@@ -262,7 +262,7 @@ html, body {
                     width: 59.7vw;
                     height: 191px;
                     height: 59.7vw;
-                    border-radius: 50%;
+                    border-radius: 3%;
                     margin: 6.8px;
                     margin: 2.13vw;
                 }

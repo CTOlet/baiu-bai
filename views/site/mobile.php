@@ -125,8 +125,7 @@ $this->title = 'Баю-бай'
 </div>
 <div class="block block--order" id="order">
     <h2 class="block__title">
-        Тихоня Wi-Fi с датчиком <br>
-        движения!
+        Новинка! <br> Совушка
     </h2>
     <div class="form">
         <h2>Сделать заказ:</h2>
@@ -192,6 +191,30 @@ $this->title = 'Баю-бай'
     <div class="models__slider">
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="model">
+                        <div class="model__inner">
+                            <div class="model__left">
+                                <div class="model__name">«Совушка»</div>
+                                <img class="model__img" src="images/m_new.jpg">
+                                <div class="model__price">9 490 руб. !!!!!</div>
+                            </div>
+                            <div class="model__right">
+                                <ul class="model__list">
+                                    <li>6 режимов качания</li>
+                                    <li>Датчик движения</li>
+                                    <li>Датчик плача (5 режимов)</li>
+                                    <li>Таймер работы (до 24 часов)</li>
+                                    <li>Пульт управления с подсветкой и обратной связью</li>
+                                    <li>Встроенный web-сервер</li>
+                                    <li>Режим «Станции» и «Точки доступа»</li>
+                                    <li>Гарантия 2 года</li>
+                                </ul>
+                                <a href="/" class="btn">Купить</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="swiper-slide">
                     <div class="model">
                         <div class="model__inner">
@@ -340,6 +363,7 @@ $this->title = 'Баю-бай'
         <a class="socials__link socials__link--youtube" href="https://www.youtube.com/c/УстройствоБаюБай"></a>
     </div>
     <div class="ftr_copyright">
+        <p>Здесь инфо о филиале в России</p>
         <p>© 2012-2017 Устройства для качания детской кроватки «Баю-Бай»</p>
         <p>© 2015-2017 Интернет-магазин www.baiu-bai.ru</p>
     </div>
