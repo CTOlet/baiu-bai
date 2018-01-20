@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "93696d076d941363ae46f95db964cda2",
+    "content-hash": "cb0a226185dc01cb2d2bebddf26c54f6",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -87,7 +87,7 @@
             "version": "v2.0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "url": "git@github.com:yiisoft/jquery-pjax.git",
                 "reference": "60728da6ade5879e807a49ce59ef9a72039b8978"
             },
             "dist": {
@@ -210,6 +210,80 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "hiqdev/yii2-google-analytics",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hiqdev/yii2-google-analytics.git",
+                "reference": "cd17b73dcd6fc9a4fc287d153428094588bab269"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hiqdev/yii2-google-analytics/zipball/cd17b73dcd6fc9a4fc287d153428094588bab269",
+                "reference": "cd17b73dcd6fc9a4fc287d153428094588bab269",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "require-dev": {
+                "hiqdev/hidev-hiqdev": "<2.0",
+                "hiqdev/hidev-php": "<2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "config-plugin": {
+                    "params": "src/config/params.php",
+                    "web": "src/config/web.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "hiqdev\\yii2\\GoogleAnalytics\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Andrii Vasyliev",
+                    "email": "sol@hiqdev.com",
+                    "homepage": "http://hipanel.com/",
+                    "role": "Project lead"
+                },
+                {
+                    "name": "Dmitry Naumenko",
+                    "email": "d.naumenko.a@gmail.com",
+                    "homepage": "http://silverfire.me/",
+                    "role": "Lead backend developer"
+                },
+                {
+                    "name": "Andrey Klochok",
+                    "email": "andreyklochok@gmail.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "Lead frontend developer"
+                },
+                {
+                    "name": "Yuriy Myronchuk",
+                    "email": "bladeroot@gmail.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "QA Lead"
+                }
+            ],
+            "description": "Google Analytics tracking widget for Yii2 applications",
+            "homepage": "https://github.com/hiqdev/yii2-google-analytics",
+            "keywords": [
+                "analytics",
+                "counter",
+                "google",
+                "plugin",
+                "yii2"
+            ],
+            "time": "2017-07-30T13:22:03+00:00"
         },
         {
             "name": "hiqdev/yii2-yandex-metrika",
@@ -3299,7 +3373,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "hiqdev/yii2-google-analytics": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

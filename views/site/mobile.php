@@ -9,9 +9,9 @@ $this->title = 'Баю-бай'
 ?>
 <div class="block block--header">
     <div class="contacts">
-        <div class="contacts__inner">
+        <div class="contacts__inner"
+             onclick="window.open('tel:<?= preg_replace('/[^+0-9]/', '', Yii::$app->params['phone']) ?>')">
             <span><?= Yii::$app->params['phone'] ?></span>
-            <span>г. Алматы, Казахстан</span>
         </div>
     </div>
 </div>
@@ -64,10 +64,10 @@ $this->title = 'Баю-бай'
     </div>
 </div>
 <div class="block block--adv">
-    Тихоня <br>
-    Wi-FI теперь <br>
-    с датчиком <br>
-    движения
+    Новинка "Совушка"!<br>
+    Самая продвинутая<br>
+    модель с пультом<br>
+    и Wi-Fi модулем
 </div>
 <div class="block block--knowmore">
     <h2 class="block__title">
@@ -90,26 +90,26 @@ $this->title = 'Баю-бай'
                     <div class="ss__title">Датчик плача</div>
                     <div class="ss__text">Запуск качания от плача ребенка, чувствительность микрофона регулируется!
                     </div>
-                    <div class="ss__subtext">*Модель "Тихоня wi-fi" и "Соня"</div>
+                    <div class="ss__subtext">*Модель "Тихоня wi-fi", "Соня" и "Совушка"</div>
                 </div>
                 <div class="swiper-slide swiper-slide--r2">
                     <div class="ss__title">Таймер качания</div>
                     <div class="ss__text">Таймер качания от 10 мин. до 24 ч. – малыш укачивается ровно столько, сколько
                         решите Вы!
                     </div>
-                    <div class="ss__subtext">*Модель "Тихоня wi-fi" и "Соня"</div>
+                    <div class="ss__subtext">*Модель "Тихоня wi-fi", "Соня" и "Совушка"</div>
                 </div>
                 <div class="swiper-slide swiper-slide--r3">
                     <div class="ss__title">Датчик движения</div>
                     <div class="ss__text">Запуск качания от шевеления ребенка, устройство понимет, когда ворочается
                         малыш
                     </div>
-                    <div class="ss__subtext">*Модель "Тихоня wi-fi"</div>
+                    <div class="ss__subtext">*Модель "Тихоня wi-fi" и "Совушка"</div>
                 </div>
                 <div class="swiper-slide swiper-slide--r4">
                     <div class="ss__title">6 режимов качания</div>
                     <div class="ss__text">Выбирайте самую комфортную «скорость» для вашего малыша!</div>
-                    <div class="ss__subtext">*Модель "Тихоня wi-fi", "Соня" и "Паинька"</div>
+                    <div class="ss__subtext">*Модель "Тихоня wi-fi", "Соня", "Паинька" и "Совушка"</div>
                 </div>
                 <div class="swiper-slide swiper-slide--r5">
                     <div class="ss__title">100% бесшумно</div>
@@ -136,18 +136,20 @@ $this->title = 'Баю-бай'
                    pattern="^\+7\(7[0-9]{2}\)[0-9]{3}-[0-9]{2}-[0-9]{2}$" title="+7(7xx)xxx-xx-xx">
             <select class="model_type" name="item" required>
                 <option value="">Выберите модель*</option>
-                <option value="3">«<?= $items[3]['name'] ?>
-                    » <?= Yii::$app->formatter->asCurrency($items[3]['price']) ?></option>
-                <option value="2">«<?= $items[2]['name'] ?>
-                    » <?= Yii::$app->formatter->asCurrency($items[2]['price']) ?></option>
-                <option value="1">«<?= $items[1]['name'] ?>
-                    » <?= Yii::$app->formatter->asCurrency($items[1]['price']) ?></option>
-                <option value="0">«<?= $items[0]['name'] ?>
-                    » <?= Yii::$app->formatter->asCurrency($items[0]['price']) ?></option>
+                <option value="3">«<?= $items[3]['name'] ?>»
+                    <?= Yii::$app->formatter->asCurrency($items[3]['price']) ?></option>
+                <option value="5">«<?= $items[5]['name'] ?>»
+                    <?= Yii::$app->formatter->asCurrency($items[5]['price']) ?></option>
+                <option value="2">«<?= $items[2]['name'] ?>»
+                    <?= Yii::$app->formatter->asCurrency($items[2]['price']) ?></option>
+                <option value="1">«<?= $items[1]['name'] ?>»
+                    <?= Yii::$app->formatter->asCurrency($items[1]['price']) ?></option>
+                <option value="0">«<?= $items[0]['name'] ?>»
+                    <?= Yii::$app->formatter->asCurrency($items[0]['price']) ?></option>
             </select>
             <input type="text" placeholder="Адрес доставки*" class="br_input" name="address" required>
             <button type="submit" class="br_button">Купить</button>
-            <div>Доставка по г. Алматы бесплатная</div>
+            <div>Бесплатная доставка по всему Казахстану!</div>
         </form>
     </div>
     <div class="phone">
@@ -197,7 +199,7 @@ $this->title = 'Баю-бай'
                             <div class="model__left">
                                 <div class="model__name">«Совушка»</div>
                                 <img class="model__img" src="images/m_new.jpg">
-                                <div class="model__price">9 490 руб. !!!!!</div>
+                                <div class="model__price"><?= Yii::$app->formatter->asCurrency($items[5]['price']) ?></div>
                             </div>
                             <div class="model__right">
                                 <ul class="model__list">
@@ -208,7 +210,9 @@ $this->title = 'Баю-бай'
                                     <li>Пульт управления с подсветкой и обратной связью</li>
                                     <li>Встроенный web-сервер</li>
                                     <li>Режим «Станции» и «Точки доступа»</li>
-                                    <li>Гарантия 2 года</li>
+                                    <li>Гарантия 12 месяцев</li>
+                                    <li><a href="/docs/5.pdf" target="_blank" class="model__link">скачать инструкцию</a>
+                                    </li>
                                 </ul>
                                 <a href="/" class="btn">Купить</a>
                             </div>
@@ -232,6 +236,9 @@ $this->title = 'Баю-бай'
                                     <li>Встроенный web-сервер</li>
                                     <li>Управление со всех современных устройств</li>
                                     <li>Работает на всех операционных системах</li>
+                                    <li>Гарантия 12 месяцев</li>
+                                    <li><a href="/docs/3.pdf" target="_blank" class="model__link">скачать инструкцию</a>
+                                    </li>
                                 </ul>
                                 <a href="#order" class="btn">Купить</a>
                             </div>
@@ -252,6 +259,9 @@ $this->title = 'Баю-бай'
                                     <li>Датчик реакции на плач</li>
                                     <li>Таймер работы</li>
                                     <li>Пульт дистанционного управления (с обратной связью)</li>
+                                    <li>Гарантия 12 месяцев</li>
+                                    <li><a href="/docs/2.pdf" target="_blank" class="model__link">скачать инструкцию</a>
+                                    </li>
                                 </ul>
                                 <a href="#order" class="btn">Купить</a>
                             </div>
@@ -270,6 +280,9 @@ $this->title = 'Баю-бай'
                                 <ul class="model__list">
                                     <li>6 режимов качания</li>
                                     <li>Пульт дистанционного управления - ИК с односторонней связью</li>
+                                    <li>Гарантия 12 месяцев</li>
+                                    <li><a href="/docs/1.pdf" target="_blank" class="model__link">скачать инструкцию</a>
+                                    </li>
                                 </ul>
                                 <a href="#order" class="btn">Купить</a>
                             </div>
@@ -288,6 +301,9 @@ $this->title = 'Баю-бай'
                                 <ul class="model__list">
                                     <li>1 режим качания</li>
                                     <li>Ручной запуск и остановка</li>
+                                    <li>Гарантия 12 месяцев</li>
+                                    <li><a href="/docs/0.pdf" target="_blank" class="model__link">скачать инструкцию</a>
+                                    </li>
                                 </ul>
                                 <a href="#order" class="btn">Купить</a>
                             </div>
@@ -299,33 +315,25 @@ $this->title = 'Баю-бай'
         </div>
     </div>
 </div>
-<!--<div class="block block--delivery">-->
-<!--    <h2 class="block__title">Доставка</h2>-->
-<!--    <div class="delivery">-->
-<!--        <div class="dlr__type">-->
-<!--            <div class="dlr__type_desc dlr__type_desc--self">-->
-<!--                <div>Самовывоз</div>-->
-<!--                <div>Забрать свой заказ Вы можете у нас в шоу-руме</div>-->
-<!--            </div>-->
-<!--            <div class="dlr__type_title">Москва и МО</div>-->
-<!--            <div class="dlr__type_desc dlr__type_desc--door">-->
-<!--                <div>Курьер</div>-->
-<!--                <div>Доставка заказа до Вашей двери</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="dlr__type">-->
-<!--            <div class="dlr__type_desc dlr__type_desc--point">-->
-<!--                <div>Пункт выдачи</div>-->
-<!--                <div>Доставка до терминала выдачи в Вашем городе</div>-->
-<!--            </div>-->
-<!--            <div class="dlr__type_title">Россия и СНГ</div>-->
-<!--            <div class="dlr__type_desc dlr__type_desc--company">-->
-<!--                <div>Транспортная компания</div>-->
-<!--                <div>Доставка транспортной компанией</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="block block--delivery">
+    <h2 class="block__title">Доставка и установка</h2>
+    <div class="delivery">
+        <div class="dlr__type">
+            <div class="dlr__type_title">Алматы</div>
+            <div class="dlr__type_desc dlr__type_desc--point">
+                <div>Мастер</div>
+                <div>Профессиональная установка от 2000 ₸</div>
+            </div>
+        </div>
+        <div class="dlr__type">
+            <div class="dlr__type_title">По всему Казахстану</div>
+            <div class="dlr__type_desc dlr__type_desc--company">
+                <div>Курьер</div>
+                <div>Доставка заказа до Вашей двери</div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="block block--faq">
     <h2 class="block__title"><span>Вопросы</span> и <span>ответы</span></h2>
     <div class="questions">
@@ -353,7 +361,8 @@ $this->title = 'Баю-бай'
 <div class="block block--footer">
     <a href="/" class="link">Сделать заказ</a>
     <div class="contacts">
-        <div class="contacts__inner">
+        <div class="contacts__inner"
+             onclick="window.open('tel:<?= preg_replace('/[^+0-9]/', '', Yii::$app->params['phone']) ?>')">
             <span><?= Yii::$app->params['phone'] ?></span>
         </div>
     </div>
@@ -363,7 +372,7 @@ $this->title = 'Баю-бай'
         <a class="socials__link socials__link--youtube" href="https://www.youtube.com/c/УстройствоБаюБай"></a>
     </div>
     <div class="ftr_copyright">
-        <p>Здесь инфо о филиале в России</p>
+        <p>Эксклюзивный дистрибьютор на территории России и СНГ www.baiu-bai.ru</p>
         <p>© 2012-2017 Устройства для качания детской кроватки «Баю-Бай»</p>
         <p>© 2015-2017 Интернет-магазин www.baiu-bai.ru</p>
     </div>

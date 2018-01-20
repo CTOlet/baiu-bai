@@ -75,7 +75,21 @@ $config = [
                         'webvisor' => true
                     ]
                 ]
-            ]
+            ],
+            'as GoogleAnalytics' => [
+                'class' => \hiqdev\yii2\GoogleAnalytics\Behavior::class,
+                'builder' => [
+                    'class' => \hiqdev\yii2\GoogleAnalytics\CodeBuilder::class,
+                    'id' => 'UA-112749957-1',
+                    'params' => [
+                        'webvisor' => true,
+                        'trackHash' => true,
+                        'clickmap' => true,
+                        'trackLinks' => true,
+                        'accurateTrackBounce' => true,
+                    ]
+                ],
+            ],
         ]
     ],
     'params' => $params,

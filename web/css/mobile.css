@@ -81,6 +81,7 @@ html, body {
                     font-size: 12px;
                     font-size: 3.75vw;
                     display: block;
+                    line-height: 7vw;
                 }
 
         .block--about {
@@ -665,8 +666,8 @@ html, body {
 }
 
 .block--models {
-    height: 550px;
-    height: 172vw;
+    height: 595px;
+    height: 186vw;
     background: #fff;
     box-sizing: border-box;
     padding: 0 28px;
@@ -683,8 +684,8 @@ html, body {
 
 .model {
     width: 100%;
-    height: 480px;
-    height: 150vw;
+    height: 512px;
+    height: 160vw;
     background: #419ee4;
     border-radius: 10px;
     border-radius: 3.125vw;
@@ -745,6 +746,21 @@ html, body {
     margin-bottom: 1vw;
 }
 
+.model__list li:last-child {
+    list-style: none;
+    margin-top: 10px;
+    margin-top: 3vw;
+}
+
+.model__link {
+    text-transform: uppercase;
+    color: #009ee1;
+}
+
+.model__link:hover {
+    color: #ff7ebb;
+}
+
 .btn {
     background-color: #ff7ebb;
     height: 19px;
@@ -783,8 +799,8 @@ html, body {
 }
 
 .models__slider .swiper-container {
-    height: 512px;
-    height: 160vw;
+    height: 563px;
+    height: 176vw;
 }
 
 .models__slider .swiper-pagination {
@@ -807,8 +823,8 @@ html, body {
 }
 
 .block--delivery {
-    height: 544px;
-    height: 170vw;
+    height: 371px;
+    height: 116vw;
     background: #fff;
     box-sizing: border-box;
 }
@@ -864,10 +880,10 @@ html, body {
     height: 76px;
     height: 24vw;
     position: absolute;
-    left: 21px;
-    left: 6.7vw;
-    top: 25px;
-    top: 8vw;
+    left: 38px;
+    left: 12vw;
+    top: 45px;
+    top: 14vw;
 }
 
 .dlr__type_desc--self:before {
@@ -890,8 +906,8 @@ html, body {
 .dlr__type_desc--company:before {
     background: url(../images/d4.png) center no-repeat;
     background-size: cover;
-    top: 128px;
-    top: 40vw;
+    top: 38px;
+    top: 12vw;
 }
 
 .dlr__type_desc div:first-child {

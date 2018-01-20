@@ -508,7 +508,7 @@ body {
                     width: 12%;
                     text-align: center;
                     line-height: 40px;
-                    font-size: 28px;
+                    font-size: 20px;
                     box-sizing: border-box;
                     border-right: 1px solid #fff;
                 }
@@ -736,6 +736,20 @@ body {
                         background-color: #ff7ebb;
                     }
 
+.model__desc ul li:last-child {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.model__link {
+    text-transform: uppercase;
+    color: #009ee1;
+}
+
+.model__link:hover {
+    color: #ff7ebb;
+}
+
 /*.model:nth-child(2n) .model__btn:hover {*/
 /*background-color: #009ee1;*/
 /*}*/
@@ -865,7 +879,7 @@ body {
                     .dlr__type_desc--company:before {
                         background: url(../images/d4.png) center no-repeat;
                         background-size: cover;
-                        top: 358px;
+                        top: 60px;
                     }
 
                 .dlr__type_title {
